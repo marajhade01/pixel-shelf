@@ -1,0 +1,10 @@
+services:
+  frontend:
+    image: node:24-bookworm-slim
+    container_name: pixel-shelf-frontend
+    working_dir: /app
+    command: sh -c "npm install && npm run dev -- --host 0.0.0.0"
+    ports:
+      - "5173:5173"
+    volumes:
+      - ./frontend:/app
